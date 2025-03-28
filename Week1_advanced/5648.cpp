@@ -10,7 +10,7 @@ int main() {
     while(n--) {
         string s;
         cin >> s;
-        reverse(s.begin(), s.end()); // µÚÁı±â!
+        reverse(s.begin(), s.end()); // ë’¤ì§‘ê¸°!
         v.push_back(stoll(s));
     }
     sort(v.begin(), v.end());
