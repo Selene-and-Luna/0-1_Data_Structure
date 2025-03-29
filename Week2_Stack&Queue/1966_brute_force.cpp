@@ -2,8 +2,8 @@
 #include <queue>
 using namespace std;
 
-// ÀÌÁø Å½»öÀ» ÀÌ¿ëÇÑ Ç®ÀÌ
-// ÂüÁ¶:https://kokodakadokok.tistory.com/entry/%EB%B0%B1%EC%A4%80-1966%EB%B2%88-%ED%94%84%EB%A6%B0%ED%84%B0-%ED%81%90-C-%ED%92%80%EC%9D%B4
+// ì™„ì „íƒìƒ‰(ë¸Œë£¨íŠ¸í¬ìŠ¤)ë¥¼ ì´ìš©í•œ í’€ì´
+// ì°¸ì¡°:https://kokodakadokok.tistory.com/entry/%EB%B0%B1%EC%A4%80-1966%EB%B2%88-%ED%94%84%EB%A6%B0%ED%84%B0-%ED%81%90-C-%ED%92%80%EC%9D%B4
 int main(void){	
 	int t;
 	cin >> t;
@@ -14,7 +14,7 @@ int main(void){
 		for (int i = 0; i < n; i++) {
 			int p;
 			cin >> p;
-			q.push({p, i}); // ¹®¼­ÀÇ Áß¿äµµ, ÇØ´ç ¹®¼­°¡ ¸î¹øÂ°ÀÎÁö 
+			q.push({p, i}); // ë¬¸ì„œì˜ ì¤‘ìš”ë„, í•´ë‹¹ ë¬¸ì„œê°€ ëª‡ë²ˆì§¸ì¸ì§€ 
 		}
 		int result = 1;
 		while(1) {
