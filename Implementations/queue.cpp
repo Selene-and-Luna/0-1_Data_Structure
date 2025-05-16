@@ -14,7 +14,7 @@ public:
     }
 
     void push(T t) {
-        Double_Linked_Node<T>* n = new Node(t);
+        Double_Linked_Node<T>* n = new Double_Linked_Node(t);
         n->SetNextNode(tail);
         tail->GetPrevNode()->SetNextNode(n);
         tail->SetPrevNode(n);
