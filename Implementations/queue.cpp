@@ -1,23 +1,24 @@
-#include "Double_Linked_Node.cpp"
+#include "Single_Linked_Node.cpp"
 
 template <typename T> class queue {
 private:
-    Double_Linked_Node<T>* head;
-    Double_Linked_Node<T>* tail;
+    Single_Linked_Node<T>* head;
+    Single_Linked_Node<T>* tail;
     long long q_size = 0;
 public:
     queue() {
-        head = new Double_Linked_Node<T>();
-        tail = new Double_Linked_Node<T>();
+        head = new Single_Linked_Node<T>();
+        tail = new Single_Linked_Node<T>();
         head->SetNextNode(tail);
-        tail->SetPrevNode(head);
+        tail->SetNextNode(head);
     }
 
     void push(T t) {
-        Double_Linked_Node<T>* n = new Double_Linked_Node(t);
-        n->SetNextNode(tail);
-        tail->GetPrevNode()->SetNextNode(n);
-        tail->SetPrevNode(n);
+        Single_Linked_Node<T>* n = new Single_Linked_Node(t);
+        if(!q_size)
+            head->SetNextNode(n);
+        tail->GetNextNode()->SetNextNode(n);
+        tail->SetNextNode(n);
         ++q_size;
     }
 
@@ -25,9 +26,9 @@ public:
         if(!q_size)
             return;
         --q_size;
-        Double_Linked_Node<T>* n = head->GetNextNode();
+        Single_Linked_Node<T>* n = head->GetNextNode();
         if(!q_size)
-            n->GetNextNode()->SetPrevNode(head);
+            tail->SetNextNode(head);
         head->SetNextNode(n->GetNextNode());
         delete n;
     }
@@ -41,7 +42,7 @@ public:
     T back() {
         if(empty())
             throw std::exception();
-        return tail->GetPrevNode()->GetValue();
+        return tail->GetNextNode()->GetValue();
     }
 
     long long size() { return q_size; }
